@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:io';
+
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
@@ -36,8 +38,8 @@ class RandomWords extends StatefulWidget {
 class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _biggerFont = const TextStyle(fontSize: 18);
-  final _pens = Image.asset('penguins.jpeg');
-  final _bears = Image.asset('bears.png');
+  final _bears = Image.asset('assets/bears.png');
+  final _pens = Image.asset('assets/penguins.jpeg');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
