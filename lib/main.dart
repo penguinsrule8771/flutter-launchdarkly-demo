@@ -17,11 +17,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Your favorite sports teams',
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blueAccent,
-          foregroundColor: Colors.white,
-        )
-      ),
+          appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+      )),
       home: const RandomWords(),
     );
   }
@@ -36,16 +35,27 @@ class RandomWords extends StatefulWidget {
 
 class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
-  final _saved = <WordPair>{};
   final _biggerFont = const TextStyle(fontSize: 18);
+  final _pens = Image.asset('penguins.jpeg');
+  final _bears = Image.asset('bears.png');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Your favorite sports teams'),
+      appBar: AppBar(
+        title: const Text('Your favorite sports teams'),
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            _pens,
+            const Text('Pittsburgh Penguins'),
+            _bears,
+            const Text('Chicago Bears')
+          ],
         ),
-        body: ListView.builder(
-          padding: const EdgeInsets.all(16.0),
+      ),
+/*         body: ListView.builder(
+          padding: const EdgeInsets.all(8.0),
           itemBuilder: (context, i) {
             if (i.isOdd) return const Divider();
 
@@ -53,29 +63,9 @@ class _RandomWordsState extends State<RandomWords> {
             if (index >= _suggestions.length) {
               _suggestions.addAll(generateWordPairs().take(10));
             }
-
-            final alreadySaved = _saved.contains(_suggestions[index]);
-            return ListTile(
-              title: Text(
-                _suggestions[index].asPascalCase,
-                style: _biggerFont,
-              ),
-              trailing: Icon(
-                alreadySaved ? Icons.favorite : Icons.favorite_border,
-                color: alreadySaved ? Colors.red : null,
-                semanticLabel: alreadySaved ? 'Remove from saved' : 'Save',
-              ),
-              onTap: () {
-                setState(() {
-                  if (alreadySaved) {
-                    _saved.remove(_suggestions[index]);
-                  } else {
-                    _saved.add(_suggestions[index]);
-                  }
-                });
-              },
-            );
+            return _pens;
           },
-        ));
+        ) */
+    );
   }
 }
