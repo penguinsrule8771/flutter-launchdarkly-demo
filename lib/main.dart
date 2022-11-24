@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Startup Name Generator',
+      title: 'Your favorite sports teams',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.orange,
+          backgroundColor: Colors.blueAccent,
           foregroundColor: Colors.white,
         )
       ),
@@ -42,7 +42,7 @@ class _RandomWordsState extends State<RandomWords> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Startup Name Generator'),
+          title: const Text('Your favorite sports teams'),
         ),
         body: ListView.builder(
           padding: const EdgeInsets.all(16.0),
